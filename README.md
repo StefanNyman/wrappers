@@ -13,6 +13,7 @@ Configuration is done through config files in `$XDG_CONFIG_HOME/{kubectl,helm}/w
 command: "/usr/local/bin/kubectl"
 protectedContexts:
     - "my-precious-cluster"
+# optionally you can define an even more annoying confirm string than the default one.
 confirmString: "7H15-15-4-r34lLY-r34lly-4nn0y1n9-57R1N9-70-7YP3-1N"
 ```
 
