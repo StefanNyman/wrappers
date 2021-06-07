@@ -65,6 +65,7 @@ func (c *Ctx) Run() error {
 		return err
 	}
 	cmd := exec.Command(c.cfg.Command, args...)
+	cmd.Stdin = os.Stdin
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	return cmd.Run()
@@ -90,7 +91,7 @@ func (c *Ctx) guardDelete(args []string) error {
 	}
 	var containsDelete bool
 	for _, arg := range args {
-		if arg == "delete" {
+		if arg == "delete" || arg == "uninstall" {
 			containsDelete = true
 			break
 		}
